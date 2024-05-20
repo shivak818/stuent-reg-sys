@@ -1,0 +1,96 @@
+/* Apply Arial font to the entire body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff; /* Alice Blue */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+}
+
+/* Header styling */
+header {
+    background-color: #ff6347; /* Tomato */
+    color: #fff; /* White text color */
+    padding: 10px 0; /* Add padding top and bottom */
+}
+
+/* Center the navigation menu */
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+}
+
+/* Style navigation links */
+nav ul li {
+    display: inline-block;
+    margin-right: 20px; /* Add some spacing between links */
+}
+
+nav ul li a {
+    color: #fff; /* White text color */
+    text-decoration: none;
+    font-size: 16px;
+}
+
+nav ul li a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* Center the form and add some padding and border */
+.container {
+    max-width: 600px;
+    margin: 50px auto; /* Center the container */
+    padding: 30px;
+    border: 1px solid #ddd; /* Light gray border */
+    border-radius: 10px;
+    background-color: #fff; /* White background */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a slight shadow */
+}
+
+/* Style labels */
+form label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold; /* Make labels bold */
+    color: #333; /* Dark gray color */
+}
+
+/* Style text and email input fields */
+form input[type="text"],
+form input[type="email"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s; /* Smooth transition for border color */
+}
+
+/* Change input border color on focus */
+form input[type="text"]:focus,
+form input[type="email"]:focus {
+    border-color: #ff6347; /* Tomato border color on focus */
+}
+
+/* Style the submit button */
+form button {
+    background-color: #ff6347; /* Tomato button background */
+    color: #fff; /* White text color */
+    border: none;
+    padding: 15px 30px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s; /* Smooth transition for background color */
+}
+
+/* Change button background color on hover */
+form button:hover {
+    background-color: #ff4500; /* Orange Red on hover */
+}
+
+/* Add some space between the form and records section */
+#records {
+    margin-top: 30px;
+}

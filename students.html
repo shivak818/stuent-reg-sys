@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registered Students</title>
+    <meta name="description" content="View registered students in the student registration system.">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="students.html">View Students</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Registered Students</h1>
+        <div id="student-list" class="grid-container">
+            <!-- Student records will be displayed here dynamically -->
+        </div>
+    </main>
+    <script src="script.js"></script>
+    <script>
+        // Retrieve and display registered students from local storage
+        var studentList = document.getElementById('student-list');
+        for (var i = 0; i < localStorage.length; i++) {
+            var key = localStorage.key(i);
+            if (!key.endsWith('_photo')) { // Exclude photo entries
+                var student = JSON.parse(localStorage.getItem(key));
+                var studentDiv = document.createElement('div');
+                studentDiv.classList.add('grid-item');
+                studentDiv.innerHTML = "<strong>Name:</strong> " + student.name + "<br><strong>Email:</strong> " + student.email + "<br><strong>Age:</strong> " + student.age + "<br><strong>Father's Name:</strong> " + student.fatherName + "<br><strong>Program:</strong> " + student.program + "<br><strong>Branch:</strong> " + student.branch + "<br><strong>SID:</strong> " + student.studentId + "<br><strong>SSLC REG NO:</strong> " + student.sslcRegNo + "<br><button onclick='editStudent(\"" + key + "\")'>Edit</button> <button onclick='deleteStudent(\"" + key + "\")'>Delete</button><br><br>";
+                studentList.appendChild(studentDiv);
+            }
+        }
+
+        // Function to delete a student record
+        function deleteStudent(studentId) {
+            if (confirm('Are you sure you want to delete this student record?')) {
+                localStorage.removeItem(studentId); // Remove student record from local storage
+                // Remove student record element from the DOM
+                document.getElementById(studentId).remove();
+            }
+        }
+
+        // Function to edit a student record
+        function editStudent(studentId) {
+            var student = JSON.parse(localStorage.getItem(studentId)); // Get student record from local storage
+            // Example: Redirect to a form with pre-filled data for editing
+            window.location.href = "edit_student.html?id=" + studentId;
+        }
+    </script>
+</body>
+</html>
